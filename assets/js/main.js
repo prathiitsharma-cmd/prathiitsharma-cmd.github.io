@@ -30,6 +30,16 @@
     if (fr) fr.style.clipPath = tornPath(topOnly, 22, 7 + k * 13);
     if (blk) blk.style.clipPath = tornPath(topOnly, 30, 11 + k * 17);
   });
+  // paper tear that tucks the bottom of the portrait back into the page
+  var tf = $(".band-tear-fringe"), tp = $(".band-tear-paper");
+  if (tf) tf.style.clipPath = tornPath(true, 24, 101);
+  if (tp) tp.style.clipPath = tornPath(true, 26, 211);
+  function alignTear() { // line the tear's grid + texture up with the page background
+    if (!tp) return;
+    var r = tp.getBoundingClientRect(), x = r.left + window.scrollX, y = r.top + window.scrollY;
+    tp.style.backgroundPosition = [-x + "px " + -y + "px", -x + "px " + -y + "px", -x + "px " + -y + "px"].join(",");
+  }
+  alignTear(); window.addEventListener("resize", alignTear); window.addEventListener("load", alignTear);
 
   // ---------- loader ----------
   var loader = $("#loader"), pct = $("#loaderPct"), start = performance.now(), minT = reduceMotion ? 200 : 1300, loaded = false;
@@ -122,7 +132,8 @@
     var track = $(".bm-track");
     if (track && window.ScrollTrigger) {
       gsap.to(".band-marquee", { xPercent: -8, ease: "none", scrollTrigger: { trigger: ".band", start: "top bottom", end: "bottom top", scrub: true } });
-      gsap.from(".portrait", { y: 60, ease: "none", scrollTrigger: { trigger: ".band", start: "top bottom", end: "center center", scrub: true } });
+      // portrait rises and grows out of the torn band as it scrolls into view
+      gsap.fromTo(".portrait", { yPercent: 18, scale: 0.86 }, { yPercent: 0, scale: 1.04, ease: "none", scrollTrigger: { trigger: ".band", start: "top 95%", end: "center 45%", scrub: true } });
     }
   }
 })();
