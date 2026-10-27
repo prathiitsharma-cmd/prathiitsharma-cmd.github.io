@@ -1,42 +1,37 @@
 # prathiitsharma-cmd.github.io
 
-Source for my portfolio site: **https://prathiitsharma-cmd.github.io**
+Source for my portfolio: **https://prathiitsharma-cmd.github.io**
 
-A single static page with no build step: HTML, CSS and vanilla JavaScript, with [Three.js](https://threejs.org) for the particle scene and [GSAP](https://gsap.com) for scroll animation. Both libraries are vendored in `assets/vendor/`, so the site has no runtime CDN dependency.
+Paper edition: crumpled graph paper, ink black and signal red, with heavy expanded type, a torn-paper band, polaroid project shots and stacked project cards. Static HTML/CSS/JS, no build step.
 
-The hero is one cloud of ~9,000 particles that morphs on the GPU between three shapes, one per theme of my work:
+The hero object is ~9,000 particles that morph on the GPU between four shapes, one per theme of my work:
 
-| Shape | Theme |
-|---|---|
-| ⚙ Spur gear | Mechanical design |
-| ◈ Neural network | AI & computation |
-| ▲ Rising bar chart | Strategy & consulting |
+| Shape | Theme | Source |
+|---|---|---|
+| Pintle injector assembly | Mechanical | sampled from the edges of my own STEP file (`assets/data/pintle.bin`) |
+| Neural network | AI & computation | generated |
+| Three meshing gears (they turn) | Production | generated |
+| Rising bar chart | Consulting | generated |
 
-Each particle stores all three target positions; the vertex shader blends them with three weights that GSAP tweens.
+The canvas uses `mix-blend-mode: difference`, so dots read as ink on the paper and invert over the black headline.
 
 ## Layout
 
 ```
 index.html              all content
-assets/css/style.css    styles (dark theme, responsive, reduced-motion aware)
+assets/css/style.css    styles (responsive, reduced-motion aware)
 assets/js/scene.js      Three.js particle scene + morph shader
-assets/js/main.js       loader, typing roles, reveals, filters, nav
-assets/vendor/          three.min.js r128, gsap 3.12.5, ScrollTrigger
-assets/img/             favicon and social preview image
-resume.pdf              current one-page resume
+assets/js/main.js       loader, torn edges, modes, reveals, stacked cards, nav
+assets/data/pintle.bin  9,000 xyz float32 points from the pintle CAD
+assets/img/             photos, project figures, paper texture, social image
+assets/vendor/          three.js r128, GSAP 3.12.5 + ScrollTrigger
+resume.pdf
 ```
 
 ## Run locally
 
 ```bash
-python -m http.server 8000
-# open http://localhost:8000
+python -m http.server 8000   # then open http://localhost:8000
 ```
 
-## Updating
-
-- **Projects / experience:** edit the matching `<article>` in `index.html`. Project cards are filtered by their `data-tags` (`mech`, `ai`, `consult`).
-- **Resume:** replace `resume.pdf`.
-- **Shapes:** `gearPoints`, `netPoints` and `chartPoints` in `assets/js/scene.js`.
-
-© Prathit Sharma. Code is free to learn from; please don't republish the content as your own.
+© Prathit Sharma. Code is free to learn from; please don't republish the content or photos as your own.

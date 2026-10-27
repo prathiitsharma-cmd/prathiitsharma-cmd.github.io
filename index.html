@@ -3,399 +3,386 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prathit Sharma · Mechanical Engineer, AI &amp; Consulting</title>
-  <meta name="description" content="Prathit Sharma — mechanical engineering student at IIPE who designs mechanical systems, models them with code, and turns the numbers into decisions." />
-  <meta name="theme-color" content="#05070d" />
-  <meta property="og:title" content="Prathit Sharma · Mechanical Engineer, AI & Consulting" />
-  <meta property="og:description" content="Propulsion, structural design, computational modelling and strategy consulting." />
+  <title>Prathit Sharma · Portfolio 2026</title>
+  <meta name="description" content="Prathit Sharma — mechanical engineering student at IIPE working across mechanical design, AI & computation, production and consulting." />
+  <meta name="theme-color" content="#ecebe7" />
+  <meta property="og:title" content="Prathit Sharma · Portfolio 2026" />
+  <meta property="og:description" content="Mechanical design · AI & computation · Production · Consulting" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://prathiitsharma-cmd.github.io/" />
   <meta property="og:image" content="https://prathiitsharma-cmd.github.io/assets/img/og.png" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script>document.documentElement.classList.add("js");</script>
 </head>
 <body class="is-loading">
 
-  <!-- ============ LOADER ============ -->
+  <!-- ================= LOADER ================= -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-marquee">
-      <div class="loader-track">
-        <span>MECHANICAL ENGINEER</span><i>•</i><span>AI &amp; COMPUTATION</span><i>•</i><span>CONSULTING</span><i>•</i>
-        <span>MECHANICAL ENGINEER</span><i>•</i><span>AI &amp; COMPUTATION</span><i>•</i><span>CONSULTING</span><i>•</i>
-      </div>
-    </div>
-    <div class="loader-pill" id="loaderPill">
-      <span class="loader-label">LOADING</span>
-      <span class="loader-pct"><b id="loaderPct">0</b>%</span>
-      <span class="loader-bar" id="loaderBar"></span>
-    </div>
+    <div class="loader-top"><span>PRATHIT SHARMA</span><span>PORTFOLIO / 2026</span></div>
+    <div class="loader-count"><span id="loaderPct">000</span></div>
+    <div class="loader-bottom"><span>LOADING DRAWINGS…</span><span class="glyphs">✶ ✦ ♣</span></div>
   </div>
 
-  <!-- ============ 3D BACKGROUND ============ -->
-  <canvas id="scene" aria-hidden="true"></canvas>
-  <div class="grid-overlay" aria-hidden="true"></div>
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-
-  <!-- ============ NAV ============ -->
-  <header class="nav" id="nav">
-    <a href="#top" class="logo" aria-label="Prathit Sharma, back to top">
-      <span class="logo-mark">PS</span><span class="logo-dot"></span>
+  <!-- ================= NAV ================= -->
+  <header class="topbar" id="topbar">
+    <a href="#top" class="tb-left" aria-label="Back to top">
+      <span class="mark">PS</span>
+      <span class="tb-role">MECHANICAL ENGINEER / IIPE</span>
     </a>
-    <nav class="nav-links" id="navLinks" aria-label="Sections">
+    <nav class="tb-nav" id="tbNav" aria-label="Sections">
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#work">Work</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#skills">Skills</a>
+      <a href="#services">What I do</a>
+      <a href="#projects">Projects</a>
+      <a href="#shopfloor">Shop floor</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="resume.pdf" class="btn btn-ghost nav-cta" target="_blank" rel="noopener">Resume ↗</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <div class="tb-right">
+      <span class="tb-year">2026</span>
+      <a href="resume.pdf" class="pill pill-dark" target="_blank" rel="noopener">Resume ↗</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
   </header>
 
   <main id="top">
 
-    <!-- ============ HERO ============ -->
+    <!-- ================= HERO ================= -->
     <section class="hero" id="hero">
-      <div class="hero-inner">
-        <p class="eyebrow reveal"><span class="pulse"></span> B.Tech Mechanical Engineering · IIPE, India</p>
-        <h1 class="hero-title">
-          <span class="line"><span class="word">Prathit</span></span>
-          <span class="line"><span class="word accent">Sharma</span></span>
+      <div class="hero-head">
+        <h1 class="hero-title" aria-label="Hi, I'm Prathit">
+          <span class="ht-line"><span class="ht-word">HI, I'M</span></span>
+          <span class="ht-line"><span class="ht-word">PRATHIT</span></span>
         </h1>
-        <p class="hero-roles reveal" aria-live="polite">
-          <span class="mono">&gt;</span> <span id="roleText">Mechanical Engineer</span><span class="caret"></span>
+        <canvas id="scene" aria-hidden="true"></canvas>
+        <p class="annot" id="annot" aria-hidden="true">
+          <svg class="annot-arrow" viewBox="0 0 90 60" fill="none"><path d="M86 52 C 60 56, 30 40, 14 10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M6 18 L14 8 L22 17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="annotText">my pintle injector, in 9,000 dots</span>
         </p>
-        <p class="hero-lede reveal">I design mechanical systems, model them with code, and turn the numbers into decisions — from rocket injectors and UAV launchers to Six Sigma business cases.</p>
-        <div class="hero-ctas reveal">
-          <a href="#work" class="btn btn-primary">See my work</a>
-          <a href="https://github.com/prathiitsharma-cmd" class="btn btn-ghost" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
       </div>
 
-      <aside class="hero-hud reveal" aria-label="Current shape">
-        <div class="hud-row"><span class="mono dim">MODE</span><span class="mono" id="hudMode">ENGINEER</span></div>
-        <div class="hud-dots">
-          <button class="hud-dot active" data-shape="0" aria-label="Show engineering shape"></button>
-          <button class="hud-dot" data-shape="1" aria-label="Show AI shape"></button>
-          <button class="hud-dot" data-shape="2" aria-label="Show consulting shape"></button>
+      <div class="hero-row">
+        <p class="hero-tag">A mechanical engineer who designs machines, models them with code, runs them on the shop floor and turns the numbers into decisions 🛠️</p>
+        <div class="modes" role="tablist" aria-label="Switch 3D shape">
+          <button class="mode active" data-shape="0" role="tab" aria-selected="true"><i>⚙</i>Mechanical</button>
+          <button class="mode" data-shape="1" role="tab" aria-selected="false"><i>◈</i>AI</button>
+          <button class="mode" data-shape="2" role="tab" aria-selected="false"><i>▣</i>Production</button>
+          <button class="mode" data-shape="3" role="tab" aria-selected="false"><i>▲</i>Consulting</button>
         </div>
-        <div class="hud-row"><span class="mono dim">PARTICLES</span><span class="mono" id="hudCount">—</span></div>
-      </aside>
-
-      <a href="#about" class="scroll-cue" aria-label="Scroll down"><span></span></a>
-    </section>
-
-    <!-- ============ MARQUEE ============ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>PROPULSION</span><i>✦</i><span>CAD &amp; DESIGN</span><i>✦</i><span>PARAMETRIC MODELLING</span><i>✦</i><span>PYTHON · MATLAB</span><i>✦</i><span>SIX SIGMA</span><i>✦</i><span>STRATEGY</span><i>✦</i>
-        <span>PROPULSION</span><i>✦</i><span>CAD &amp; DESIGN</span><i>✦</i><span>PARAMETRIC MODELLING</span><i>✦</i><span>PYTHON · MATLAB</span><i>✦</i><span>SIX SIGMA</span><i>✦</i><span>STRATEGY</span><i>✦</i>
+        <a href="#contact" class="pill pill-cta">Contact me <span>→</span></a>
       </div>
-    </div>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section" id="about">
-      <div class="container">
-        <header class="section-head">
-          <span class="section-num mono">01</span>
-          <h2 class="section-title">About</h2>
-        </header>
+      <div class="glyph-row" aria-hidden="true">✶ ✦ ♣</div>
 
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="big reveal">I'm a third-year mechanical engineering student at the <strong>Indian Institute of Petroleum and Energy</strong>, Visakhapatnam.</p>
-            <p class="reveal">My work sits where three things meet. I like the physical problem — how a propellant manifold distributes flow, or where a launcher's structure buckles. I like building the model that answers it, in MATLAB or Python, and sweeping it until the governing case falls out. And I like the business question at the end: what should we actually do, what does it cost, and how sure are we?</p>
-            <p class="reveal">Outside the lab I'm the founding president of <strong>180 Degrees Consulting IIPE</strong>, where our analysts do pro-bono strategy work for NGOs.</p>
-          </div>
-          <ul class="stats">
-            <li class="stat reveal"><b data-count="3">0</b><span>engineering internships — aerospace, defence-space, hydropower</span></li>
-            <li class="stat reveal"><b>1</b><span>conference paper accepted (NCCS 2026)</span></li>
-            <li class="stat reveal"><b data-count="396">0</b><span>design points swept to size a UAV launcher</span></li>
-            <li class="stat reveal"><b data-count="20000">0</b><span>Monte Carlo runs behind one consulting recommendation</span></li>
-          </ul>
-        </div>
-
-        <div class="pillars" id="pillars">
-          <article class="pillar reveal" data-shape="0">
-            <div class="pillar-top"><span class="mono">01 / ENGINEER</span><span class="pillar-icon">⚙</span></div>
-            <h3>Mechanical design</h3>
-            <p>Propulsion, structures and machines — sizing from first principles, then CAD in SolidWorks and Fusion 360.</p>
-            <ul class="chips"><li>Propulsion</li><li>Structural sizing</li><li>CAD</li></ul>
-          </article>
-          <article class="pillar reveal" data-shape="1">
-            <div class="pillar-top"><span class="mono">02 / COMPUTE</span><span class="pillar-icon">◈</span></div>
-            <h3>AI &amp; computation</h3>
-            <p>Parametric sweeps, simulations and data pipelines in MATLAB and Python — and on-device language models for vehicles.</p>
-            <ul class="chips"><li>MATLAB</li><li>Python</li><li>Monte Carlo</li></ul>
-          </article>
-          <article class="pillar reveal" data-shape="2">
-            <div class="pillar-top"><span class="mono">03 / CONSULT</span><span class="pillar-icon">▲</span></div>
-            <h3>Strategy &amp; consulting</h3>
-            <p>Six Sigma, business cases and NGO strategy — turning analysis into a recommendation someone can act on.</p>
-            <ul class="chips"><li>DMAIC</li><li>NPV &amp; risk</li><li>Case competitions</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ EDUCATION + EXPERIENCE ============ -->
-    <section class="section" id="experience">
-      <div class="container">
-        <header class="section-head">
-          <span class="section-num mono">02</span>
-          <h2 class="section-title">Experience <span class="amp">&amp;</span> education</h2>
-        </header>
-
-        <div class="timeline" id="timeline">
-          <div class="timeline-line"><span class="timeline-fill" id="timelineFill"></span></div>
-
-          <article class="t-item reveal">
-            <div class="t-when mono">Jun – Jul 2026</div>
-            <div class="t-card">
-              <h3>Def-Space Tech Intern</h3>
-              <p class="t-org">Bharat Space Education Research Centre (BSERC)</p>
-              <ul>
-                <li>Researched pintle-type LOX/LCH4 bipropellant injectors and derived the foundational parameters for atomisation and combustion stability.</li>
-                <li>Studied autonomous UAV architectures and defence-tech systems, applying propulsion and safety-critical design fundamentals.</li>
-              </ul>
-              <ul class="chips"><li>Propulsion</li><li>MATLAB</li><li>NASA CEA</li></ul>
-            </div>
-          </article>
-
-          <article class="t-item reveal">
-            <div class="t-when mono">May – Jun 2026</div>
-            <div class="t-card">
-              <h3>Engineering Intern</h3>
-              <p class="t-org">SEC Industries Pvt. Ltd. · Hyderabad</p>
-              <ul>
-                <li>Rotated through Design, Quality Control, Fabrication, Machine Shop and Planning at an aerospace hardware manufacturer.</li>
-                <li>Worked hands-on with the QMS, technical documentation, traceability records and compliance workflows.</li>
-                <li>Did the preliminary design, trade studies and structural sizing of a high-speed pneumatic UAV catapult launcher.</li>
-              </ul>
-              <ul class="chips"><li>Aerospace</li><li>QMS</li><li>Trade studies</li></ul>
-            </div>
-          </article>
-
-          <article class="t-item reveal">
-            <div class="t-when mono">Dec 2025</div>
-            <div class="t-card">
-              <h3>Operations &amp; Maintenance Intern</h3>
-              <p class="t-org">NHPC Ltd. — Salal Power Station · Reasi, J&amp;K</p>
-              <ul>
-                <li>Supported the capital maintenance of Unit 6 (115 MW) at a high-silt river hydropower station.</li>
-                <li>Followed a 400-tonne generator rotor tandem lift and studied the Master/Slave VFD logic.</li>
-                <li>Inspected silt-induced runner erosion and evaluated HVOF coatings for component life.</li>
-              </ul>
-              <ul class="chips"><li>Hydropower</li><li>O&amp;M</li><li>Turbomachinery</li></ul>
-            </div>
-          </article>
-
-          <article class="t-item reveal edu">
-            <div class="t-when mono">2024 – present</div>
-            <div class="t-card">
-              <span class="badge">Education</span>
-              <h3>B.Tech, Mechanical Engineering</h3>
-              <p class="t-org">Indian Institute of Petroleum and Energy (IIPE), Visakhapatnam</p>
-              <p>Core: fluid mechanics, thermodynamics, turbomachinery, manufacturing technology, production planning &amp; control. Preparing for GATE in Production &amp; Industrial Engineering.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ WORK ============ -->
-    <section class="section" id="work">
-      <div class="container">
-        <header class="section-head">
-          <span class="section-num mono">03</span>
-          <h2 class="section-title">Selected work</h2>
-        </header>
-
-        <div class="filters" role="tablist" aria-label="Filter projects">
-          <button class="filter active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="filter" data-filter="mech" role="tab" aria-selected="false">⚙ Engineering</button>
-          <button class="filter" data-filter="ai" role="tab" aria-selected="false">◈ AI &amp; computation</button>
-          <button class="filter" data-filter="consult" role="tab" aria-selected="false">▲ Consulting</button>
-        </div>
-
-        <div class="projects" id="projects">
-
-          <article class="project featured" data-tags="mech ai">
-            <div class="p-head"><span class="p-num mono">01</span><span class="status live">Ongoing · paper accepted</span></div>
-            <h3>Movable Pintle Injector for a LOX/LCH4 Engine</h3>
-            <p>A throttleable propellant manifold that borrows the spiral-casing idea from Francis turbines to cut circumferential swirl and uneven spray. Sized in MATLAB against a NASA CEA design point, with a linear actuation mechanism built from patent and literature review.</p>
-            <dl class="metrics">
-              <div><dt>O/F</dt><dd>3.2</dd></div>
-              <div><dt>Thrust</dt><dd>750 N</dd></div>
-              <div><dt>Chamber</dt><dd>20 bar</dd></div>
-            </dl>
-            <ul class="chips"><li>MATLAB</li><li>NASA CEA</li><li>SolidWorks</li><li>LaTeX</li></ul>
-            <div class="p-links">
-              <a href="https://github.com/prathiitsharma-cmd/Pintle-Injector-Re-Design" target="_blank" rel="noopener">Repository ↗</a>
-              <span class="mono dim">Presenting at NCCS · Dec 2026</span>
-            </div>
-          </article>
-
-          <article class="project featured" data-tags="mech ai">
-            <div class="p-head"><span class="p-num mono">02</span><span class="status">Internship · SEC Industries</span></div>
-            <h3>Pneumatic UAV Catapult Launcher</h3>
-            <p>A launcher sized from a 2D parametric sweep of 11 launch angles × 36 UAV masses, not one assumed worst case. The governing point turned out to be 20 kg at 15° — not the heaviest airframe — and every ISO 6431 / EN 286-1 part was re-checked against all 396 conditions.</p>
-            <dl class="metrics">
-              <div><dt>Bore</dt><dd>125 mm</dd></div>
-              <div><dt>Buckling FoS</dt><dd>5.5</dd></div>
-              <div><dt>Envelope</dt><dd>396/396</dd></div>
-            </dl>
-            <ul class="chips"><li>MATLAB</li><li>Euler buckling</li><li>Pneumatics</li><li>ISO sizing</li></ul>
-            <div class="p-links">
-              <a href="https://github.com/prathiitsharma-cmd/UAV-Pneumatic-Launcher" target="_blank" rel="noopener">Repository ↗</a>
-            </div>
-          </article>
-
-          <article class="project featured" data-tags="consult ai">
-            <div class="p-head"><span class="p-num mono">03</span><span class="status">Case competition · BITS Hyderabad</span></div>
-            <h3>Break The Case '26 — Six Sigma Invoice Errors</h3>
-            <p>A DMAIC study of supplier invoice errors at a renewable-energy back office. We split three solution approaches into 15 building blocks, searched all 25,599 workable combinations and stress-tested the shortlist with 20,000 Monte Carlo runs to land on a phased hybrid plan.</p>
-            <dl class="metrics">
-              <div><dt>Error cut</dt><dd>90%</dd></div>
-              <div><dt>3-yr NPV</dt><dd>₹162 L</dd></div>
-              <div><dt>Payback</dt><dd>9 mo</dd></div>
-            </dl>
-            <ul class="chips"><li>Python</li><li>pandas · SciPy</li><li>statsmodels</li><li>Excel modelling</li></ul>
-            <div class="p-links">
-              <a href="https://github.com/prathiitsharma-cmd/Six-Sigma-Invoicing" target="_blank" rel="noopener">Repository ↗</a>
-              <span class="mono dim">Team entry · base-case figures</span>
-            </div>
-          </article>
-
-          <article class="project" data-tags="ai">
-            <div class="p-head"><span class="p-num mono">04</span><span class="status live">In progress</span></div>
-            <h3>VehicleGPT — On-device Vehicle Assistant</h3>
-            <p>Tata Elxsi Teliport Season 4, Case Study 5. Team White Chocolate is designing an assistant that answers questions about a vehicle's own data using a small language model running on the vehicle, and building a beta to back the Round 1 pitch.</p>
-            <ul class="chips"><li>SLMs</li><li>Edge AI</li><li>Automotive</li></ul>
-          </article>
-
-          <article class="project" data-tags="mech">
-            <div class="p-head"><span class="p-num mono">05</span><span class="status live">In progress</span></div>
-            <h3>Leaf Collection System — Greeneria Renewables</h3>
-            <p>An open brief from the company's director: a suction-based system to collect fallen leaves from roads and public spaces. The concept was presented and well received; I'm now working on the final architecture, mechanism selection and CAD.</p>
-            <ul class="chips"><li>Concept design</li><li>Mechanism selection</li><li>CAD</li></ul>
-          </article>
-
-          <article class="project" data-tags="mech">
-            <div class="p-head"><span class="p-num mono">06</span><span class="status">Team · AAKRUTI 2026-27</span></div>
-            <h3>SETU-X — Transformable Mobility Platform</h3>
-            <p>A wheel-to-leg transforming mobility platform designed in SolidWorks for the AAKRUTI Student Design Competition (mobility theme), with full-scale sizing behind the concept.</p>
-            <ul class="chips"><li>SolidWorks</li><li>Mechanisms</li><li>Mobility</li></ul>
-          </article>
-
-          <article class="project" data-tags="mech ai">
-            <div class="p-head"><span class="p-num mono">07</span><span class="status live">Research</span></div>
-            <h3>PARMA — From Topology Optimisation to CAD</h3>
-            <p>A research project with a friend on reconstructing topology-optimised aerospace brackets into clean, manufacturable CAD geometry, comparing reconstruction methods on the SimJEB bracket dataset.</p>
-            <ul class="chips"><li>Topology optimisation</li><li>DfAM</li><li>CAD reconstruction</li></ul>
-          </article>
-
-          <article class="project" data-tags="consult mech">
-            <div class="p-head"><span class="p-num mono">08</span><span class="status">Case competition · Unstop</span></div>
-            <h3>Eurogrip TORQ 4.0 — EV Scooter Tyre</h3>
-            <p>A next-generation tyre concept for electric two-wheelers for TVS Srichakra's case challenge: a range-focused compound, a zoned tread and an EV-specific tread pattern, with a path to e-motorcycles.</p>
-            <ul class="chips"><li>Product strategy</li><li>Tyre design</li><li>EV</li></ul>
-          </article>
-
-        </div>
-        <p class="more reveal">More on <a href="https://github.com/prathiitsharma-cmd" target="_blank" rel="noopener">GitHub ↗</a></p>
-      </div>
-    </section>
-
-    <!-- ============ LEADERSHIP ============ -->
-    <section class="section" id="leadership">
-      <div class="container">
-        <header class="section-head">
-          <span class="section-num mono">04</span>
-          <h2 class="section-title">Leadership <span class="amp">&amp;</span> recognition</h2>
-        </header>
-
-        <div class="lead-grid">
-          <article class="lead-main reveal">
-            <span class="badge">Founding President</span>
-            <h3>180 Degrees Consulting · IIPE</h3>
-            <p>I co-founded the IIPE chapter of 180 Degrees Consulting, the global student-run consultancy for non-profits and social enterprises, and ran its first recruitment drive. Our analysts benchmark NGOs and take on pro-bono engagements; our first covers market analysis, organisational design and brand positioning for an Indian non-profit.</p>
-            <ul class="chips"><li>Team building</li><li>Client management</li><li>Pro-bono strategy</li></ul>
-          </article>
-          <ul class="lead-list">
-            <li class="reveal"><span class="mono dim">Role</span><b>Social Welfare Secretary</b><span>National Service Scheme (NSS), IIPE</span></li>
-            <li class="reveal"><span class="mono dim">Role</span><b>Co-founder</b><span>Sattva Quizzing Club, IIPE</span></li>
-            <li class="reveal"><span class="mono dim">Volunteer</span><b>Online tutor</b><span>Vidyankan — free tutoring for students</span></li>
-            <li class="reveal"><span class="mono dim">Award</span><b>National Finalist</b><span>Socionnovate</span></li>
-            <li class="reveal"><span class="mono dim">Award</span><b>Finalist</b><span>SpringFest Quiz, IIT Kharagpur</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SKILLS ============ -->
-    <section class="section" id="skills">
-      <div class="container">
-        <header class="section-head">
-          <span class="section-num mono">05</span>
-          <h2 class="section-title">Toolkit</h2>
-        </header>
-
-        <div class="skills">
-          <div class="skill-group reveal">
-            <h3><span class="dotc c1"></span>Design &amp; CAD</h3>
-            <ul class="chips lg"><li>SolidWorks</li><li>Fusion 360</li><li>AutoCAD</li><li>Parametric CAD</li></ul>
-          </div>
-          <div class="skill-group reveal">
-            <h3><span class="dotc c1"></span>Analysis &amp; simulation</h3>
-            <ul class="chips lg"><li>Ansys Mechanical</li><li>Abaqus</li><li>NASA CEA</li><li>Euler buckling</li><li>Trade studies</li></ul>
-          </div>
-          <div class="skill-group reveal">
-            <h3><span class="dotc c2"></span>Programming &amp; data</h3>
-            <ul class="chips lg"><li>MATLAB</li><li>Python</li><li>pandas · NumPy · SciPy</li><li>C</li><li>LaTeX</li><li>Git</li></ul>
-          </div>
-          <div class="skill-group reveal">
-            <h3><span class="dotc c2"></span>Engineering domains</h3>
-            <ul class="chips lg"><li>Fluid mechanics</li><li>Thermodynamics</li><li>Turbomachinery</li><li>Propulsion</li><li>Pneumatics</li><li>Systems engineering</li></ul>
-          </div>
-          <div class="skill-group reveal">
-            <h3><span class="dotc c3"></span>Business &amp; quality</h3>
-            <ul class="chips lg"><li>Six Sigma (DMAIC)</li><li>QMS &amp; documentation</li><li>Financial modelling</li><li>Monte Carlo risk</li><li>Excel</li></ul>
-          </div>
-          <div class="skill-group reveal">
-            <h3><span class="dotc c3"></span>Currently learning</h3>
-            <ul class="chips lg"><li>FEA workflows</li><li>CFD</li><li>Operations research</li><li>Production &amp; industrial engg.</li></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section class="section contact" id="contact">
-      <div class="container">
-        <header class="section-head">
-          <span class="section-num mono">06</span>
-          <h2 class="section-title">Contact</h2>
-        </header>
-        <p class="contact-big reveal">Open to internships in <span class="hl1">design</span>, <span class="hl2">computational engineering</span> and <span class="hl3">operations &amp; strategy</span>.</p>
-        <a class="contact-mail reveal" href="mailto:prathiitsharma@gmail.com">prathiitsharma@gmail.com <span>↗</span></a>
-        <ul class="socials reveal">
-          <li><a href="https://linkedin.com/in/prathit-sharma" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/prathiitsharma-cmd" target="_blank" rel="noopener">GitHub</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a></li>
+      <div class="logos" aria-label="Where I've worked and competed">
+        <span class="logos-label">WORKED &amp; COMPETED WITH</span>
+        <ul>
+          <li>SEC INDUSTRIES</li>
+          <li>BSERC</li>
+          <li>NHPC</li>
+          <li>IIPE</li>
+          <li>180 DEGREES CONSULTING</li>
+          <li>BREAK THE CASE '26</li>
+          <li>TATA ELXSI TELIPORT</li>
         </ul>
       </div>
-      <footer class="footer container">
-        <span class="mono dim">© <span id="year">2026</span> Prathit Sharma</span>
-        <span class="mono dim">Visakhapatnam, India</span>
-        <a href="#top" class="mono">Back to top ↑</a>
-      </footer>
     </section>
+
+    <!-- ================= TORN BAND + PORTRAIT ================= -->
+    <section class="band" aria-label="Prathit Sharma">
+      <div class="band-fringe torn" aria-hidden="true"></div>
+      <div class="band-black torn">
+        <div class="band-marquee" aria-hidden="true">
+          <div class="bm-track">
+            <span>MECHANICAL</span><i>✶</i><span>AI</span><i>✦</i><span>PRODUCTION</span><i>♣</i><span>CONSULTING</span><i>✶</i><span>PRATHIT SHARMA</span><i>✦</i><span>2026</span><i>♣</i>
+            <span>MECHANICAL</span><i>✶</i><span>AI</span><i>✦</i><span>PRODUCTION</span><i>♣</i><span>CONSULTING</span><i>✶</i><span>PRATHIT SHARMA</span><i>✦</i><span>2026</span><i>♣</i>
+          </div>
+        </div>
+        <figure class="portrait" id="portrait">
+          <img src="assets/img/portrait.webp" alt="Prathit Sharma" width="720" height="640" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT / HELLO ================= -->
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <figure class="selbox reveal" aria-label="Full-body photo">
+          <img src="assets/img/fullbody.webp" alt="Prathit Sharma, full length, in a blazer" loading="lazy" />
+          <i class="h tl"></i><i class="h tr"></i><i class="h bl"></i><i class="h br"></i><i class="h tm"></i><i class="h bm"></i><i class="h ml"></i><i class="h mr"></i>
+          <figcaption class="selbox-dim mono">B.Tech ME · 2024 – 28</figcaption>
+        </figure>
+
+        <div class="hello">
+          <h2 class="display reveal">HELLO</h2>
+          <p class="hello-lead reveal"><b>Hi, I'm Prathit Sharma.</b></p>
+          <p class="reveal">I'm a third-year mechanical engineering student at the Indian Institute of Petroleum and Energy, Visakhapatnam. I like problems that start with physics and end with a decision.</p>
+          <p class="reveal">That's meant sizing a throttleable rocket injector and a UAV catapult in MATLAB, rotating through a real aerospace shop floor, standing under a 400-tonne rotor lift at a hydropower station, and building a Monte Carlo model to pick a Six Sigma plan.</p>
+          <p class="reveal">Right now I'm heading towards production &amp; industrial engineering, and running the 180 Degrees Consulting chapter I founded on campus.</p>
+
+          <h3 class="display-sm reveal">EDUCATION</h3>
+          <p class="edu reveal"><b>B.Tech, Mechanical Engineering</b><br/>Indian Institute of Petroleum and Energy | 2024 – Present</p>
+        </div>
+
+        <div class="side">
+          <h3 class="display-sm reveal">SKILLS</h3>
+          <ul class="tiles reveal" aria-label="Tools">
+            <li title="SolidWorks"><b>Sw</b><span>SolidWorks</span></li>
+            <li title="Fusion 360" class="red"><b>F3</b><span>Fusion 360</span></li>
+            <li title="AutoCAD"><b>Ac</b><span>AutoCAD</span></li>
+            <li title="Ansys"><b>An</b><span>Ansys</span></li>
+            <li title="MATLAB" class="red"><b>Ml</b><span>MATLAB</span></li>
+            <li title="Python"><b>Py</b><span>Python</span></li>
+            <li title="NASA CEA"><b>Ce</b><span>NASA CEA</span></li>
+            <li title="LaTeX"><b>Tx</b><span>LaTeX</span></li>
+            <li title="Excel" class="red"><b>Xl</b><span>Excel</span></li>
+          </ul>
+
+          <h3 class="display-sm reveal">EXPERIENCE</h3>
+          <ul class="xp reveal">
+            <li><span class="yr">2026 · Jun–Jul</span><b>Def-Space Tech Intern</b><span>BSERC</span></li>
+            <li><span class="yr">2026 · May–Jun</span><b>Engineering Intern</b><span>SEC Industries, Hyderabad</span></li>
+            <li><span class="yr">2025 · Dec</span><b>O&amp;M Intern</b><span>NHPC Salal Power Station</span></li>
+            <li><span class="yr">2026 · Present</span><b>Founding President</b><span>180 Degrees Consulting IIPE</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES (numbered list) ================= -->
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="display reveal">WHAT I DO</h2>
+          <p class="hand reveal">four hats, one engineer ↓</p>
+        </div>
+        <ol class="svc">
+          <li class="svc-row reveal" data-shape="0">
+            <span class="svc-n">01</span>
+            <div class="svc-body"><h3>MECHANICAL DESIGN</h3><p>Propulsion hardware, structures and mechanisms, sized from first principles and modelled in SolidWorks and Fusion 360.</p></div>
+            <ul class="svc-tags"><li>Propulsion</li><li>Structural sizing</li><li>CAD</li></ul>
+          </li>
+          <li class="svc-row reveal" data-shape="1">
+            <span class="svc-n">02</span>
+            <div class="svc-body"><h3>AI &amp; COMPUTATION</h3><p>Parametric sweeps, simulations and data pipelines in MATLAB and Python, and on-device language models for vehicles.</p></div>
+            <ul class="svc-tags"><li>MATLAB</li><li>Python</li><li>Monte Carlo</li></ul>
+          </li>
+          <li class="svc-row reveal" data-shape="2">
+            <span class="svc-n">03</span>
+            <div class="svc-body"><h3>PRODUCTION</h3><p>Shop-floor experience across design, QC, fabrication, machining and planning, and heavy-equipment maintenance at a 115 MW hydro unit.</p></div>
+            <ul class="svc-tags"><li>Manufacturing</li><li>QMS</li><li>O&amp;M</li></ul>
+          </li>
+          <li class="svc-row reveal" data-shape="3">
+            <span class="svc-n">04</span>
+            <div class="svc-body"><h3>CONSULTING</h3><p>Six Sigma, business cases and NGO strategy: turning analysis into a recommendation someone can act on.</p></div>
+            <ul class="svc-tags"><li>DMAIC</li><li>NPV &amp; risk</li><li>Strategy</li></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS (stacked cards) ================= -->
+    <section class="section projects" id="projects">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="display reveal">PROJECTS</h2>
+          <p class="hand reveal">scroll, they stack →</p>
+        </div>
+
+        <div class="stack">
+          <article class="card" style="--i:0">
+            <header class="card-top">
+              <div class="card-id"><span class="card-n">01</span><span class="card-meta"><em>CONTEXT</em>Independent research</span></div>
+              <div class="card-pills"><span class="pill pill-line">⚙ Mechanical</span><a class="pill pill-red" href="https://github.com/prathiitsharma-cmd/Pintle-Injector-Re-Design" target="_blank" rel="noopener">Repository ↗</a></div>
+            </header>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>MOVABLE PINTLE INJECTOR</h3>
+                <p>A throttleable LOX/LCH4 injector whose spiral-vane manifold borrows from Francis-turbine casings to cut circumferential swirl. Sized in MATLAB against a NASA CEA design point. <b>Paper accepted at NCCS 2026.</b></p>
+                <dl class="stats"><div><dt>O/F</dt><dd>3.2</dd></div><div><dt>Thrust</dt><dd>750 N</dd></div><div><dt>Pc</dt><dd>20 bar</dd></div></dl>
+              </div>
+              <div class="polas">
+                <figure class="pola" style="--r:-4deg"><img src="assets/img/pintle_render.jpg" alt="CAD render of the pintle injector assembly" loading="lazy" /><figcaption>pintle assembly · CAD</figcaption></figure>
+                <figure class="pola" style="--r:5deg"><img src="assets/img/spiral.jpg" alt="Spiral manifold outer-wall envelope plot" loading="lazy" /><figcaption>spiral envelope · MATLAB</figcaption></figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" style="--i:1">
+            <header class="card-top">
+              <div class="card-id"><span class="card-n">02</span><span class="card-meta"><em>CONTEXT</em>Internship · SEC Industries</span></div>
+              <div class="card-pills"><span class="pill pill-line">⚙ Mechanical</span><a class="pill pill-red" href="https://github.com/prathiitsharma-cmd/UAV-Pneumatic-Launcher" target="_blank" rel="noopener">Repository ↗</a></div>
+            </header>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>PNEUMATIC UAV LAUNCHER</h3>
+                <p>A catapult sized from a 2D sweep of 11 launch angles × 36 UAV masses instead of one assumed worst case. The governing point came out at 20 kg and 15°, not the heaviest airframe, and every ISO part was re-checked against all 396 conditions.</p>
+                <dl class="stats"><div><dt>Bore</dt><dd>125 mm</dd></div><div><dt>Buckling FoS</dt><dd>5.5</dd></div><div><dt>Verified</dt><dd>396/396</dd></div></dl>
+              </div>
+              <div class="polas">
+                <figure class="pola wide" style="--r:3deg"><img src="assets/img/uav_contours.jpg" alt="Contour plots of required bore and piston force across launch angle and UAV mass" loading="lazy" /><figcaption>parametric sweep · MATLAB</figcaption></figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" style="--i:2">
+            <header class="card-top">
+              <div class="card-id"><span class="card-n">03</span><span class="card-meta"><em>CONTEXT</em>Break The Case '26 · BITS Hyderabad</span></div>
+              <div class="card-pills"><span class="pill pill-line">▲ Consulting</span><a class="pill pill-red" href="https://github.com/prathiitsharma-cmd/Six-Sigma-Invoicing" target="_blank" rel="noopener">Repository ↗</a></div>
+            </header>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>SIX SIGMA INVOICING</h3>
+                <p>A DMAIC study of supplier invoice errors. We split three approaches into 15 building blocks, searched all 25,599 combinations in Python and stress-tested the shortlist with 20,000 Monte Carlo runs to land on a phased hybrid plan.</p>
+                <dl class="stats"><div><dt>Error cut</dt><dd>90%</dd></div><div><dt>3-yr NPV</dt><dd>₹162 L</dd></div><div><dt>Payback</dt><dd>9 mo</dd></div></dl>
+              </div>
+              <div class="polas">
+                <figure class="pola wide" style="--r:-3deg"><img src="assets/img/sixsigma.jpg" alt="Charts of modelled error cut by month and annual benefit breakdown" loading="lazy" /><figcaption>team entry · base-case results</figcaption></figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" style="--i:3">
+            <header class="card-top">
+              <div class="card-id"><span class="card-n">04</span><span class="card-meta"><em>CONTEXT</em>Tata Elxsi Teliport S4 · Case 5</span></div>
+              <div class="card-pills"><span class="pill pill-line">◈ AI</span><span class="pill pill-red">In progress</span></div>
+            </header>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>VEHICLEGPT</h3>
+                <p>An assistant that answers questions about a vehicle's own data using a small language model running on the vehicle itself. Team White Chocolate is building a beta to back the Round 1 pitch.</p>
+              </div>
+              <div class="card-art" aria-hidden="true">
+                <svg viewBox="0 0 320 200"><g fill="none" stroke="#f4f3ef" stroke-width="2"><rect x="40" y="70" width="240" height="70" rx="26"/><path d="M80 70 L110 38 H210 L240 70"/><circle cx="95" cy="140" r="20" fill="#121212"/><circle cx="225" cy="140" r="20" fill="#121212"/></g><g fill="#e3241b"><circle cx="160" cy="105" r="6"/></g><g stroke="#e3241b" stroke-width="1.5" fill="none" stroke-dasharray="3 5"><path d="M160 105 L60 20 M160 105 L270 18 M160 105 L300 110"/></g><g font-family="JetBrains Mono" font-size="11" fill="#f4f3ef"><text x="18" y="16">"tyre pressure?"</text><text x="232" y="14">SLM</text><text x="262" y="126">CAN</text></g></svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" style="--i:4">
+            <header class="card-top">
+              <div class="card-id"><span class="card-n">05</span><span class="card-meta"><em>CLIENT</em>Greeneria Renewables</span></div>
+              <div class="card-pills"><span class="pill pill-line">⚙ Mechanical</span><span class="pill pill-red">In progress</span></div>
+            </header>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>LEAF COLLECTION SYSTEM</h3>
+                <p>An open brief from the company's director: a suction-based system to collect fallen leaves from roads and public spaces. The concept was presented and well received; I'm now on the final architecture, mechanism selection and CAD.</p>
+              </div>
+              <div class="card-art" aria-hidden="true">
+                <svg viewBox="0 0 320 200"><g fill="none" stroke="#f4f3ef" stroke-width="2"><path d="M30 170 H290"/><rect x="150" y="70" width="120" height="70" rx="10"/><path d="M150 112 H96 Q70 112 62 140 L56 162"/><path d="M150 96 H92 Q56 96 46 136 L40 162"/><circle cx="175" cy="150" r="16" fill="#121212"/><circle cx="245" cy="150" r="16" fill="#121212"/><path d="M270 88 h18 v22 h-18"/></g><g fill="#e3241b"><path d="M70 176 q10 -16 24 -6 q-10 14 -24 6z"/><path d="M112 172 q8 -18 26 -10 q-10 16 -26 10z"/><path d="M20 168 q12 -14 22 -2 q-12 10 -22 2z"/></g><g stroke="#e3241b" stroke-width="1.6" fill="none" stroke-dasharray="3 5"><path d="M48 158 C60 120 110 104 150 104"/></g><g font-family="JetBrains Mono" font-size="11" fill="#f4f3ef"><text x="176" y="62">blower + bin</text><text x="16" y="120">suction nozzle</text></g></svg>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="display-sm more-title reveal">MORE WORK</h3>
+        <div class="minis">
+          <article class="mini reveal"><span class="mono">06 · AAKRUTI 2026-27</span><h4>SETU-X</h4><p>A wheel-to-leg transforming mobility platform designed in SolidWorks for a national design competition.</p></article>
+          <article class="mini reveal"><span class="mono">07 · RESEARCH</span><h4>PARMA</h4><p>Reconstructing topology-optimised aerospace brackets into clean, manufacturable CAD, tested on the SimJEB dataset.</p></article>
+          <article class="mini reveal"><span class="mono">08 · EUROGRIP TORQ 4.0</span><h4>EV SCOOTER TYRE</h4><p>A tyre concept for electric two-wheelers: a range compound, a zoned tread and an EV-specific pattern.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOP FLOOR (production) ================= -->
+    <section class="section shopfloor" id="shopfloor">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="display reveal">ON THE SHOP FLOOR</h2>
+          <p class="hand reveal">where drawings become parts</p>
+        </div>
+
+        <article class="ticket reveal">
+          <header class="ticket-head">
+            <span class="mono">WORK ORDER #01</span>
+            <span class="mono">SEC INDUSTRIES · HYDERABAD · MAY – JUN 2026</span>
+          </header>
+          <h3>AEROSPACE HARDWARE, END TO END</h3>
+          <p>I rotated through every department an aerospace part passes through on its way out of the factory, then put it to use designing a pneumatic UAV launcher.</p>
+          <ol class="route" aria-label="Process route">
+            <li><span class="st">OP 10</span><b>Design</b><small>trade studies, sizing</small></li>
+            <li><span class="st">OP 20</span><b>Quality control</b><small>QMS, traceability</small></li>
+            <li><span class="st">OP 30</span><b>Fabrication</b><small>joining, assembly</small></li>
+            <li><span class="st">OP 40</span><b>Machine shop</b><small>turning, milling</small></li>
+            <li><span class="st">OP 50</span><b>Planning</b><small>routing, scheduling</small></li>
+          </ol>
+        </article>
+
+        <article class="ticket reveal">
+          <header class="ticket-head">
+            <span class="mono">WORK ORDER #02</span>
+            <span class="mono">NHPC SALAL POWER STATION · REASI, J&amp;K · DEC 2025</span>
+          </header>
+          <h3>CAPITAL MAINTENANCE, UNIT 6 (115 MW)</h3>
+          <div class="ticket-grid">
+            <div><span class="big">400 t</span><p>generator rotor tandem lift, with the Master/Slave VFD logic that keeps two cranes in step</p></div>
+            <div><span class="big">HVOF</span><p>coatings evaluated against silt-induced erosion I inspected on the turbine runners</p></div>
+            <div><span class="big">O&amp;M</span><p>maintenance workflows and safety protocols at a high-silt river station</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= ACHIEVEMENTS (testimonial-style cards) ================= -->
+    <section class="section wins" id="wins">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 class="display reveal">WINS &amp; FIRSTS</h2>
+          <p class="hand reveal">receipts, not adjectives</p>
+        </div>
+        <div class="win-grid">
+          <article class="win reveal"><p>Conference paper on a spiral-vane pintle injector accepted, with updated analysis and initial CFD for the talk.</p><footer><span class="badge">📄</span><div><b>NCCS 2026</b><small>Presenting · Dec 2026</small></div></footer></article>
+          <article class="win reveal"><p>Founded the campus chapter of the global student consultancy for non-profits and ran its first-ever recruitment drive.</p><footer><span class="badge">🧭</span><div><b>180 Degrees Consulting IIPE</b><small>Founding President</small></div></footer></article>
+          <article class="win reveal"><p>Reached the national final of a social-innovation challenge.</p><footer><span class="badge">🏅</span><div><b>Socionnovate</b><small>National Finalist</small></div></footer></article>
+          <article class="win reveal"><p>Made it to Round 2 with a DMAIC model that searched 25,599 solution combinations.</p><footer><span class="badge">📊</span><div><b>Break The Case '26</b><small>BITS Hyderabad</small></div></footer></article>
+          <article class="win reveal"><p>Reached the final of the SpringFest quiz, and co-founded Sattva, the quizzing club at IIPE.</p><footer><span class="badge">❓</span><div><b>SpringFest Quiz</b><small>Finalist</small></div></footer></article>
+          <article class="win reveal"><p>Social Welfare Secretary for the National Service Scheme on campus, and a volunteer online tutor with Vidyankan.</p><footer><span class="badge">🤝</span><div><b>NSS IIPE</b><small>Social Welfare Secretary</small></div></footer></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact-grid">
+        <h2 class="display contact-title reveal">LET'S<br/>GET IN<br/>TOUCH</h2>
+        <div class="contact-side reveal">
+          <figure class="pola pola-contact" style="--r:5deg"><img src="assets/img/mountain.webp" alt="Prathit sitting on a hilltop with mountains behind" loading="lazy" /><figcaption>off the clock ⛰</figcaption></figure>
+          <p class="hand">open to internships in design, computational engineering, production &amp; strategy</p>
+          <a class="mail" href="mailto:prathiitsharma@gmail.com">prathiitsharma@gmail.com</a>
+          <ul class="links">
+            <li><a href="https://linkedin.com/in/prathit-sharma" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/prathiitsharma-cmd" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="resume.pdf" target="_blank" rel="noopener">Resume PDF ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="foot">
+      <div class="band-fringe torn top-only" aria-hidden="true"></div>
+      <div class="foot-black torn top-only">
+        <div class="wrap foot-grid">
+          <div class="foot-name">PRATHIT<br/>SHARMA</div>
+          <div class="foot-cols">
+            <div><span class="mono dim">MENU</span><a href="#about">About</a><a href="#projects">Projects</a><a href="#shopfloor">Shop floor</a><a href="#contact">Contact</a></div>
+            <div><span class="mono dim">ELSEWHERE</span><a href="https://github.com/prathiitsharma-cmd" target="_blank" rel="noopener">GitHub</a><a href="https://linkedin.com/in/prathit-sharma" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:prathiitsharma@gmail.com">Email</a></div>
+          </div>
+        </div>
+        <div class="shapes" aria-hidden="true">
+          <svg viewBox="0 0 100 100"><path d="M50 8l7 12 13-4 2 13 13 2-4 13 12 7-12 7 4 13-13 2-2 13-13-4-7 12-7-12-13 4-2-13-13-2 4-13-12-7 12-7-4-13 13-2 2-13 13 4z" fill="#f4f3ef"/><circle cx="50" cy="50" r="13" fill="#121212"/></svg>
+          <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="#e3241b"/></svg>
+          <svg viewBox="0 0 100 100"><path d="M50 8 L92 90 H8z" fill="#f4f3ef"/></svg>
+          <svg viewBox="0 0 100 100"><path d="M50 4 C54 40 60 46 96 50 C60 54 54 60 50 96 C46 60 40 54 4 50 C40 46 46 40 50 4z" fill="#f4f3ef"/></svg>
+          <svg viewBox="0 0 100 100"><rect x="10" y="10" width="80" height="80" rx="18" fill="#e3241b"/></svg>
+          <svg viewBox="0 0 100 100"><g fill="#f4f3ef"><circle cx="50" cy="28" r="22"/><circle cx="28" cy="62" r="22"/><circle cx="72" cy="62" r="22"/><rect x="45" y="60" width="10" height="34"/></g></svg>
+          <svg viewBox="0 0 100 100"><path d="M8 50 a42 42 0 0 1 84 0z" fill="#f4f3ef"/><path d="M8 56 a42 42 0 0 0 84 0z" fill="#e3241b"/></svg>
+        </div>
+        <div class="wrap foot-base"><span class="mono dim">© <span id="year">2026</span> Prathit Sharma · Visakhapatnam, India</span><a href="#top" class="mono">Back to top ↑</a></div>
+      </div>
+    </footer>
   </main>
 
   <script src="assets/vendor/three.min.js"></script>
