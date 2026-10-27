@@ -121,7 +121,7 @@
     cards.forEach(function (c, i) {
       if (i === cards.length - 1) return;
       gsap.to(c, {
-        scale: 0.95, filter: "brightness(0.82)", ease: "none",
+        scale: 0.96, filter: "brightness(0.9)", ease: "none",
         scrollTrigger: { trigger: cards[i + 1], start: "top 70%", end: "top " + (84 + (i + 1) * 14) + "px", scrub: true }
       });
     });
