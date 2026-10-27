@@ -51,8 +51,12 @@
     pct.textContent = ("00" + v).slice(-3);
     if (p < 1 || !loaded) requestAnimationFrame(step); else setTimeout(done, 200);
   })(start);
+  var finished = false;
+  setTimeout(function () { done(); }, 6500); // fallback if animation frames are throttled (background tab)
   function done() {
+    if (finished) return; finished = true;
     loader.classList.add("done"); document.body.classList.remove("is-loading");
+    if (window.ScrollTrigger) setTimeout(function () { ScrollTrigger.refresh(); }, 50);
     S.intro(); heroIntro(); startCycle();
   }
 
@@ -115,14 +119,32 @@
     r.addEventListener("click", function () { $$(".svc-row").forEach(function (o) { o.classList.toggle("active", o === r); }); S.setShape(+r.dataset.shape); });
   });
 
-  // ---------- stacked cards: earlier cards shrink + dim as the next one covers them ----------
-  if (hasGsap && window.ScrollTrigger && !reduceMotion && window.innerWidth > 860) {
-    var cards = $$(".card");
+  // ---------- stacked cards ----------
+  // Each card is position:sticky. A card taller than the screen would otherwise stick before
+  // its bottom was ever visible, so its sticky offset is pulled up until the whole card has
+  // scrolled into view (top = min(stackOffset, viewportHeight - cardHeight)).
+  var cards = $$(".card");
+  function stackTops() {
+    var small = window.innerWidth <= 860, base = small ? 64 : 84, step = small ? 10 : 14;
+    cards.forEach(function (c, i) {
+      var want = base + i * step, fit = window.innerHeight - c.offsetHeight - 12;
+      c.style.top = Math.min(want, fit) + "px";
+      c.dataset.top = Math.min(want, fit);
+    });
+  }
+  stackTops();
+  window.addEventListener("resize", stackTops);
+  window.addEventListener("load", function () { stackTops(); if (window.ScrollTrigger) ScrollTrigger.refresh(); });
+  $$(".card img").forEach(function (im) { im.addEventListener("load", function () { stackTops(); if (window.ScrollTrigger) ScrollTrigger.refresh(); }); });
+
+  // earlier cards shrink + dim as the next one slides over them
+  if (hasGsap && window.ScrollTrigger && !reduceMotion) {
     cards.forEach(function (c, i) {
       if (i === cards.length - 1) return;
+      var next = cards[i + 1];
       gsap.to(c, {
-        scale: 0.96, filter: "brightness(0.9)", ease: "none",
-        scrollTrigger: { trigger: cards[i + 1], start: "top 70%", end: "top " + (84 + (i + 1) * 14) + "px", scrub: true }
+        scale: 0.95, filter: "brightness(0.85)", ease: "none",
+        scrollTrigger: { trigger: next, start: "top 85%", end: function () { return "top " + (parseFloat(next.dataset.top) || 84) + "px"; }, scrub: true, invalidateOnRefresh: true }
       });
     });
   }

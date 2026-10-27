@@ -413,7 +413,10 @@ a.pill-red:hover { background: var(--paper-hi); color: var(--ink); }
   .side .display-sm:nth-of-type(2) { margin-top: 28px; }
   .svc-row { grid-template-columns: 70px 1fr; }
   .svc-tags { grid-column: 2; justify-content: flex-start; }
-  .card { position: relative; top: auto; min-height: 0; }
+  .card { min-height: 0; padding: 18px; }
+  .polas { min-height: 0; }
+  .pola { width: 62%; }
+  .pola.wide { width: 100%; }
   .card-body { grid-template-columns: 1fr; }
   .polas { min-height: 0; padding: 10px 0 18px; }
   .minis, .win-grid, .ticket-grid { grid-template-columns: 1fr; }
