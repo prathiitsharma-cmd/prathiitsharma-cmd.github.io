@@ -159,3 +159,30 @@
     }
   }
 })();
+
+/* ---------- Design studio: lazy-load the 3D viewer ---------- */
+(function () {
+  var host = document.getElementById("cadViewer");
+  if (!host) return;
+  var started = false;
+  function start() {
+    if (started) return;
+    if (!window.CadViewer || !window.THREE || !THREE.GLTFLoader || !THREE.OrbitControls) { setTimeout(start, 200); return; }
+    started = true;
+    var v = window.CadViewer(host, { src: host.dataset.src, autoRotate: !window.matchMedia("(prefers-reduced-motion: reduce)").matches });
+    window.__cad = v;
+    var views = host.querySelectorAll("[data-view]");
+    views.forEach(function (b) { b.addEventListener("click", function () { views.forEach(function (x) { x.classList.toggle("on", x === b); }); v.view(b.dataset.view); }); });
+    var ex = document.getElementById("explode");
+    ex.addEventListener("input", function () { v.setExplode(ex.value / 100); });
+    var sec = document.getElementById("sectionBtn");
+    sec.addEventListener("click", function () { var on = sec.getAttribute("aria-pressed") !== "true"; sec.setAttribute("aria-pressed", on); v.setSection(on); });
+    var spin = document.getElementById("spinBtn");
+    spin.addEventListener("click", function () { var on = spin.getAttribute("aria-pressed") !== "true"; spin.setAttribute("aria-pressed", on); v.setAutoRotate(on); });
+    host.addEventListener("pointerdown", function () { spin.setAttribute("aria-pressed", "false"); });
+  }
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { start(); io.disconnect(); } }, { rootMargin: "600px 0px" });
+    io.observe(host);
+  } else window.addEventListener("load", start);
+})();
